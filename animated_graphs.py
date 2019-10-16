@@ -29,4 +29,10 @@ ani = animation.FuncAnimation(fig, update, frames=f,
                               init_func=init, #blit=True,
                               repeat=True)
 plt.show()
+
+
+
+Writer = animation.writers['ffmpeg']
+writer = Writer(fps=20, metadata=dict(artist='Me'), bitrate=1800)
+
 ani.save('test.mp4', writer=writer)
